@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classifier</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Segoe UI,sans-serif;
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#111827;
+            padding:15px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            color:white;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+        }
+
+        .hero{
+            text-align:center;
+            padding:120px 20px;
+        }
+
+        .hero h1{
+            color:#1e3a8a;
+            font-size:42px;
+        }
+
+        .hero p{
+            color:#6b7280;
+            font-size:18px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            background:#2563eb;
+            color:white;
+            padding:12px 25px;
+            border-radius:6px;
+            text-decoration:none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="logo">
+        AI Classifier
+    </div>
+
+    <div class="nav-links">
+
+               
+        <a href="{% url 'login' %}">
+            Login
+        </a>
+
+        <a href="{% url 'signup' %}">
+            Sign Up
+        </a>
+
+    </div>
+
+</div>
+
+<div class="hero">
+
+    <h1>
+         Dashboard
+    </h1>
+
+    <p>
+        classification platform.
+    </p>
+
+    <a href="{% url 'login' %}" class="btn">
+        Get Started
+    </a>
+
+</div>
+
+</body>
+</html>

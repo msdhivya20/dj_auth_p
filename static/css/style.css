@@ -1,0 +1,167 @@
+/* =========================
+   BODY
+========================= */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6f9;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;              /* ✅ reduced width */
+    height: 100vh;
+    background: #111827;
+    padding-top: 20px;
+    color: white;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #60a5fa;
+}
+
+.nav-item {
+    display: block;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+.nav-item i {
+    margin-right: 10px;
+}
+
+.nav-item:hover {
+    background: #1f2937;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.dropdown {
+    margin-top: 10px;
+}
+
+.dropdown-toggle {
+    display: block;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    margin-left: 15px;
+    border-left: 2px solid #374151;
+}
+
+.dropdown-menu a {
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.dropdown-menu a:hover {
+    background: #374151;
+}
+
+/* hover open */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+/* =========================
+   MAIN AREA
+========================= */
+.main {
+    margin-left: 200px;   /* ✅ match sidebar width */
+}
+
+/* TOP BAR */
+.topbar {
+    background: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e3a8a;
+    border-bottom: 1px solid #ddd;
+}
+
+/* CONTENT */
+.content {
+    padding: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+.alert {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-weight: 500;
+}
+
+.topbar {
+    background: white;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.auth-links {
+    font-size: 15px;
+}
+
+.auth-links a {
+    text-decoration: none;
+    color: #1e3a8a;
+    margin-left: 8px;
+}
+
+.auth-links a:hover {
+    color: #2563eb;
+}
+
+.alert {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.auto-hide{
+    transition: opacity 0.5s ease;
+}

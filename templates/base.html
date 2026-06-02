@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Dashboard</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+    <h2>MODELS</h2>
+
+    <a href="/home/" class="nav-item">
+    <i class="fa fa-home"></i> Home
+    </a>
+
+    <a href="/predict/" class="nav-item">
+    <i class="fa fa-home"></i> ML Predict
+    </a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+
+        <span>
+             DASHBOARD
+        </span>
+
+        <div class="auth-links">
+
+            {% if user.is_authenticated %}
+
+                Welcome, <strong>{{ user.username }}</strong>
+
+                |
+
+                <a href="{% url 'logout' %}">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'login' %}">
+                    Login
+                </a>
+
+                |
+
+                <a href="{% url 'signup' %}">
+                    Signup
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div class="content">
+
+        {% if messages %}
+            {% for message in messages %}
+
+                <div class="alert">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+</div>
+<script>
+setTimeout(function() {
+
+    let messages = document.querySelectorAll('.auto-hide');
+
+    messages.forEach(function(msg) {
+        msg.style.opacity = '0';
+
+        setTimeout(function() {
+            msg.remove();
+        }, 500);
+    });
+
+}, 3000);
+</script>
+</body>
+</html>

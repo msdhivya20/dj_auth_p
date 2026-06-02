@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card" style="text-align:center; padding:40px;">
+
+    <h1 style="color:#1e3a8a; margin-bottom:10px;">
+         DASHBOARD
+    </h1>
+
+    {% if user.is_authenticated %}
+
+        <p style="font-size:18px; color:#2563eb;">
+            Welcome {{ user.username }} 👋
+        </p>
+
+    {% else %}
+
+        <p style="font-size:18px; color:#6b7280;">
+            Welcome! Please Login or Signup to continue.
+        </p>
+
+    {% endif %}
+
+    <hr style="margin:20px 0;">
+
+    <h3>Available Models</h3>
+
+    <p>✔ Classification</p>
+
+
+    <br>
+
+    <p style="color:#9ca3af;">
+        Select any model from sidebar to begin 🚀
+    </p>
+
+</div>
+
+{% endblock %}

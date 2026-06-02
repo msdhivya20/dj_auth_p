@@ -1,0 +1,179 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Segoe UI,sans-serif;
+            background:#f4f6f9;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .auth-card{
+            background:white;
+            width:400px;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0px 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            text-align:center;
+            color:#1e3a8a;
+            margin-bottom:25px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#1d4ed8;
+        }
+
+        .message{
+            color:red;
+            margin-bottom:10px;
+            text-align:center;
+        }
+
+        .links{
+            text-align:center;
+            margin-top:15px;
+        }
+
+        .links a{
+            text-decoration:none;
+            color:#2563eb;
+            font-size:14px;
+        }
+
+        .links a:hover{
+            text-decoration:underline;
+        }
+
+        .divider{
+            margin:15px 0;
+            border-top:1px solid #ddd;
+        }
+
+        .signup-link{
+            text-align:center;
+            margin-top:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="auth-card">
+
+    <h2>Login</h2>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="message auto-hide">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input type="text"
+               name="username"
+               placeholder="Enter Username"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Enter Password"
+               required>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <div class="links">
+
+        <a href="{% url 'password_reset' %}">
+            Forgot Password?
+        </a>
+
+        &nbsp; | &nbsp;
+
+        <a href="{% url 'forgot_username' %}">
+            Forgot Username?
+        </a>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="signup-link">
+
+        Don't have an account?
+
+        <a href="{% url 'signup' %}">
+            Create Account
+        </a>
+
+    </div>
+    <div class="login-link" style="margin-top:15px;">
+
+    <a href="{% url 'landing' %}">
+        ← Back 
+    </a>
+
+</div>
+
+</div>
+<script>
+setTimeout(function() {
+
+    let messages = document.querySelectorAll('.auto-hide');
+
+    messages.forEach(function(msg) {
+        msg.style.opacity = '0';
+
+        setTimeout(function() {
+            msg.remove();
+        }, 500);
+    });
+
+}, 3000);
+</script>
+</body>
+</html>
