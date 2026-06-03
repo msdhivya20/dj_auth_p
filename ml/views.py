@@ -3,4 +3,4 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def predict(request):
-    return render(request, 'ml\predict.html')
+    return render(request, 'ml/predict.html')
